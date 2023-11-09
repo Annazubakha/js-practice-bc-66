@@ -18,10 +18,8 @@ const time = 90;
 const hours = Math.floor(time / 60);
 const updHours = (hours + "").padStart(2, "0");
 
-console.log(updHours);
-
 const min = time % 60;
-console.log(min);
-// const min = time - hours * 60;
+const updmin = (min + "").padStart(2, "0");
+console.log(`${updHours}:${updmin}`);
 
-console.log("10".padStart(2, "0"));
+// const min = time - hours * 60;

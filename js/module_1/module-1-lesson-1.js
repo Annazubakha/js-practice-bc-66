@@ -18,7 +18,7 @@ const time = 90;
 const hours = Math.floor(time / 60);
 const updHours = (hours + "").padStart(2, "0");
 
-// console.log(updHours);
+console.log(updHours);
 
 const min = time % 60;
 console.log(min);

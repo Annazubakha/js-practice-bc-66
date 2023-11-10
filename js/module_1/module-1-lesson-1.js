@@ -36,7 +36,8 @@
   ? Дізнайтесь позицію на якій перебуває цей підрядок
 */
 
-const str = 'HTML, CSS, JS, PHP, React, Vue, Node.JS, C, C++';
-const isExistJs = str.includes('JS');
+// const str = 'HTML, CSS, JS, PHP, React, Vue, Node.JS, C, C++';
+// const isExistJs = str.includes('JS');
 
-console.log(str.lastIndexOf('JS'));
+// console.log(str.lastIndexOf('JS'));
+// / За допомогою циклу for додайте всі парні числа від min до max

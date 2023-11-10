@@ -54,23 +54,56 @@
 const userInp = prompt('Enter login');
 
 
-if (userInp === 'Admin') {
+// if (userInp === 'Admin') {
 
-  const password = prompt('Enter password');
-  if (password === 'Im the boss') {
-    console.log('Hello');
-  } else if (password === null) {
-  console.log('Cancel');
-} 
-  else {
-    console.log('Invalid password!');
-  } 
+//   const password = prompt('Enter password');
+//   if (password === 'Im the boss') {
+//     console.log('Hello');
+//   } else if (password === null) {
+//   console.log('Cancel');
+// } 
+//   else {
+//     console.log('Invalid password!');
+//   } 
   
-} else if (userInp === null) {
-  console.log('Cancel');
-}
- else {
-  console.log('I do not know you');
-}
+// } else if (userInp === null) {
+//   console.log('Cancel');
+// }
+//  else {
+//   console.log('I do not know you');
+// }
 
+
+switch (userInp) {
+  case (userInp === 'Admin' || userInp === 'User') && userInp:
+
+    const password = prompt('Enter password'); 
+    switch (password) {
+      case userInp === 'Admin' && 'Im the boss':
+        console.log('Hello Boss');
+        break;
+      
+     case  userInp === 'User' && 'Im the user':
+        console.log('Hello User');
+        break;
+      
+    case null :
+    console.log('Canceled password')
+    break;
+  
+  default:
+      console.log('Unknown password')
+       
+      
+    }
+    break;
+  
+case null :
+    console.log('Canceled login')
+    break;
+  
+  default:
+    console.log('Unknown User');
+   
+}
 

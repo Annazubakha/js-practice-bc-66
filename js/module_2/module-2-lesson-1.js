@@ -43,18 +43,28 @@
 ? та виводить її в консоль.
 */
 
-const str = 'JavaScript це цікаво!';
+// const str = 'JavaScript це цікаво!';
 // let rewerseString = ""
 // for(let i= str.length-1; i>=0; i-=1 ){
 //     rewerseString+= str[i]
-// } 
+// }
 // console.log(rewerseString)
 
 // const array= []
 // for(let i= str.length-1; i>=0; i-=1 ){
 //     array.push(str[i])
-// } 
+// }
+// console.log(array.join(""))
+// const rewerseString = str.split("").reverse().join("")
+// console.log(rewerseString)
+// const array = []
+// for (let i = 0; i < str.length; i += 1) {
+//    array.push(str[str.length -1 -i])
+// }
 // console.log(array.join(""))
 
-
-
+// const array = []
+// for (let i = 0; i < str.length; i += 1) {
+//     array.unshift(str[i])
+// }
+// console.log(array.join(""))

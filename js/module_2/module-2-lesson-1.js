@@ -21,8 +21,8 @@
 ? Вставте "Country" та "Reggy" на початок масиву.
  */
 
-const genres = ['Jazz', 'Blues'];
-const newArr = genres.splice(genres.length, 0, "rock'n'roll");
+// const genres = ['Jazz', 'Blues'];
+// const newArr = genres.splice(genres.length, 0, "rock'n'roll");
 // genres[genres.length] = "rock'n'roll";
 
 // const newArr = genres.push("rock'n'roll");
@@ -33,7 +33,28 @@ const newArr = genres.splice(genres.length, 0, "rock'n'roll");
 // const firstElem = genres.splice(0, 1);
 // console.log(firstElem[0]);
 // genres.unshift('Country', 'Reggy');
-genres.splice(0, 0, 'Country', 'Reggy');
+// genres.splice(0, 0, 'Country', 'Reggy');
 
-console.log(genres);
+// console.log(genres);
 // console.log(newArr);
+
+/*
+? Напиши скрипт, який «розвертає» рядок (зворотний порядок букв)
+? та виводить її в консоль.
+*/
+
+const str = 'JavaScript це цікаво!';
+// let rewerseString = ""
+// for(let i= str.length-1; i>=0; i-=1 ){
+//     rewerseString+= str[i]
+// } 
+// console.log(rewerseString)
+
+// const array= []
+// for(let i= str.length-1; i>=0; i-=1 ){
+//     array.push(str[i])
+// } 
+// console.log(array.join(""))
+
+
+

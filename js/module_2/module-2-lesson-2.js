@@ -56,3 +56,17 @@
 
 // console.log(noSpace('Hello world team dsadas'));
  
+// function arrReverse(arr) {
+//   return arr.reverse()
+// }
+
+function arrReverse(arr) {
+  for (let i = 0; i < arr.length / 2; i++)
+  {
+    let template = arr[arr.length - i - 1];
+    arr[arr.length - i - 1] = arr[i];
+    arr[i] = template;
+  }
+  return arr
+}
+console.log(arrReverse([1,2,3,4,5]));

@@ -23,20 +23,36 @@
 Створіть функцію, яка видаляє перший і останній символи рядка. Вам надається один параметр, вихідний рядок.
 */
 
-function deleteString(str) {
-  // const arr = str.split("");
-  // arr.splice(0, 1);
-  // arr.splice(-1, 1);
-  //--------------------------------
-  // arr.shift();
-  // arr.pop();
-  //-------------------------------
+// function deleteString(str) {
+//   // const arr = str.split("");
+//   // arr.splice(0, 1);
+//   // arr.splice(-1, 1);
+//   //--------------------------------
+//   // arr.shift();
+//   // arr.pop();
+//   //-------------------------------
 
-  // const deleteArr = arr.splice(1, arr.length - 2);
-  // return deleteArr.join("");
-  //________________________________
+//   // const deleteArr = arr.splice(1, arr.length - 2);
+//   // return deleteArr.join("");
+//   //________________________________
 
-  return str.slice(1, -1);
-}
+//   return str.slice(1, -1);
+// }
 
-console.log(deleteString("Hello world"));
+// console.log(deleteString("Hello world"));
+
+
+/*
+Створіть функцію яка видаляє пробіли з рядка, 
+а потім поверніть отриманий рядок.
+*/
+
+// const noSpace = function (str) {
+//   // return str.replaceAll(' ', '')
+//   //_____________________________________
+//  return str.split(' ').join('')
+
+// }
+
+// console.log(noSpace('Hello world team dsadas'));
+ 

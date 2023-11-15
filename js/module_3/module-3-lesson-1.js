@@ -138,11 +138,41 @@ const filmoteka = [
 
 // //? Напишіть функцію findFilmByName(films, filmTitle), яка шукає фільм за назвою.
 
-function findFilmByName(films, filmTitle) {
-  for (const el of films) {
-    if (el.title === filmTitle) return el;
-  }
-  return `${filmTitle} not find`;
-}
+// function findFilmByName(films, filmTitle) {
+//   for (const el of films) {
+//     if (el.title === filmTitle) return el;
+//   }
+//   return `${filmTitle} not find`;
+// }
 
-console.log(findFilmByName(filmoteka, "ahdtszh"));
+// console.log(findFilmByName(filmoteka, "ahdtszh"));
+// ? Напишіть функцію findFilmByWord(films, filmTitle), яка шукає
+//  фільми які включають дане слово.
+// function findFilmByWord(films, filmTitle) {
+//   const normilizeFilmTitle = filmTitle.toLowerCase();
+//   const newArray = [];
+//   for (const el of films) {
+//     const includesTitle = el.title.toLowerCase().includes(normilizeFilmTitle);
+//     const includesDecsr = el.description
+//       .toLowerCase()
+//       .includes(normilizeFilmTitle);
+
+//     if (includesTitle || includesDecsr) {
+//       newArray.push(el);
+//     }
+//   }
+//   return newArray;
+// }
+// console.log(findFilmByWord(filmoteka, "lorem"));
+
+//? Напишіть функцію getAdultFilms(films), яка повертає масив усіх дорослих фільмів.
+function getAdultFilms(films) {
+  const newArray = [];
+  for (const el of films) {
+    if (el.adult) {
+      newArray.push(el);
+    }
+  }
+  return newArray;
+}
+console.table(getAdultFilms(filmoteka));

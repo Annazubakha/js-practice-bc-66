@@ -148,8 +148,42 @@ const user = {
 ? властивості isAdmin привласнить змінну isAdmin (false, якщо немає такої властивості)
  */
 
-const { firstName, lastName, age: userAge, isAdmin = false } = user;
-console.log(firstName);
-console.log(lastName);
-console.log(userAge);
-console.log(isAdmin);
+// const { firstName, lastName, age: userAge, isAdmin = false } = user;
+// console.log(firstName);
+// console.log(lastName);
+// console.log(userAge);
+// console.log(isAdmin);
+
+/*
+? У нас є об'єкт salaries із зарплатами:
+? Створіть функцію topSalary(salaries), яка повертає ім'я працівника з найбільшою заробітною плантею.
+? Якщо об'єкт salaries порожній, потрібно повернути null.
+? Якщо кілька високооплачуваних працівників, можна повернути будь-кого з них.
+? P.S. Використовуйте Object.entries та деструктурування, щоб перебрати пари ключ/значення.
+*/
+
+const salaries = {
+  John: 100,
+  Pete: 3300,
+  Mary: 2500,
+};
+
+const topSalary = function (salaries) {
+  const arr = Object.entries(salaries);
+  if (!arr.length) return null;
+
+  let maxSalary = arr[0][1];
+  let userName = '';
+  for (const [name, salary] of arr) {
+    if (salary > maxSalary) {
+      maxSalary = salary;
+      userName = name;
+    }
+  }
+
+  console.log(arr);
+
+  return userName;
+};
+
+console.log(topSalary(salaries));

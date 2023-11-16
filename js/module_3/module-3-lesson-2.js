@@ -223,12 +223,45 @@ evenNumbers([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2) => [-8, 26]
 evenNumbers([6, -25, 3, 7, 5, 5, 7, -3, 23], 1) => [6]
 */
 
-function evenNumbers(array, number) {
-  const evenArr = [];
-  for (const item of array) {
-    if (item % 2 === 0) evenArr.push(item);
-  }
-  return evenArr.slice(-number);
-}
+// function evenNumbers(array, number) {
+//   const evenArr = [];
+//   for (const item of array) {
+//     if (item % 2 === 0) evenArr.push(item);
+//   }
+//   return evenArr.slice(-number);
+// }
 
-console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+// console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+// _______________________________________
+/*
+Напишіть функцію, яка отримуватиме три аргументи. Перші два завжди 
+будуть масивами, що складаються з цілих чисел, третій буде рядком букв. 
+Довжини перших двох масивів будуть рівні, а цілі числа завжди додатні.
+
+Ви повинні розділити перше ціле число першого масиву на перше число другого 
+масиву, щоб знайти залишок, а потім зробити те саме з другою парою цілих чисел 
+тощо. Якщо найбільший залишок із усіх знайдених є парним числом, функція має 
+повертати рядок маленькими літерами. В іншому випадку функція має повернути 
+рядок великими літерами
+
+приклад:
+
+function([16, 16], [10, 5], 'Doctor') має повертати 'doctor', оскільки:
+
+залишок першої пари цілих чисел (16 поділити на 10) дорівнює 6;
+
+залишок другої пари дорівнює 1;
+
+найбільший знайдений залишок дорівнює 6, а оскільки 6 є парним числом --> рядок 
+повертається заголовними літерами.
+*/
+
+// function changeRegister(array1, array2, str) {
+//   const newArray = [];
+//   for (let i = 0; i < array1.length; i++) {
+//     newArray.push(array1[i] % array2[i]);
+//   }
+//   const maxNumber = Math.max(...newArray);
+//   return maxNumber % 2 === 0 ? str.toLowerCase() : str.toUpperCase();
+// }
+// console.log(changeRegister([16, 16, 7], [15, 5, 4], 'Doctor'));

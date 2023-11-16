@@ -162,6 +162,32 @@ const user = {
 ? P.S. Використовуйте Object.entries та деструктурування, щоб перебрати пари ключ/значення.
 */
 
+// const salaries = {
+//   John: 100,
+//   Pete: 3300,
+//   Mary: 2500,
+// };
+
+// const topSalary = function (salaries) {
+//   const arr = Object.entries(salaries);
+//   if (!arr.length) return null;
+
+//   let maxSalary = arr[0][1];
+//   let userName = '';
+//   for (const [name, salary] of arr) {
+//     if (salary > maxSalary) {
+//       maxSalary = salary;
+//       userName = name;
+//     }
+//   }
+
+//   console.log(arr);
+
+//   return userName;
+// };
+
+// console.log(topSalary(salaries));
+
 const salaries = {
   John: 100,
   Pete: 3300,
@@ -169,21 +195,19 @@ const salaries = {
 };
 
 const topSalary = function (salaries) {
-  const arr = Object.entries(salaries);
-  if (!arr.length) return null;
-
-  let maxSalary = arr[0][1];
-  let userName = '';
-  for (const [name, salary] of arr) {
-    if (salary > maxSalary) {
-      maxSalary = salary;
-      userName = name;
-    }
+  if(!Object.keys(salaries).length) {
+    return null;
   }
 
-  console.log(arr);
-
-  return userName;
+  let maxSalary = 0;
+  let name = '';
+  for(let key in salaries) {
+    if (salaries[key] > maxSalary) {
+      maxSalary = salaries[key];
+      name = key;
+    }
+  }
+  return name;
 };
 
 console.log(topSalary(salaries));

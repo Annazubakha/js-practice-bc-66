@@ -188,26 +188,47 @@ const user = {
 
 // console.log(topSalary(salaries));
 
-const salaries = {
-  John: 100,
-  Pete: 3300,
-  Mary: 2500,
-};
+// const salaries = {
+//   John: 100,
+//   Pete: 3300,
+//   Mary: 2500,
+// };
 
-const topSalary = function (salaries) {
-  if(!Object.keys(salaries).length) {
-    return null;
+// const topSalary = function (salaries) {
+//   if(!Object.keys(salaries).length) {
+//     return null;
+//   }
+
+//   let maxSalary = 0;
+//   let name = '';
+//   for(let key in salaries) {
+//     if (salaries[key] > maxSalary) {
+//       maxSalary = salaries[key];
+//       name = key;
+//     }
+//   }
+//   return name;
+// };
+
+// console.log(topSalary(salaries));
+
+/*
+ Створіть функцію evenNumbers(array, number) 
+яка отримує масив чисел, повертає новий масив парних чисел, що містить number останніх парних чисел з вихідного масиву (у тому самому порядку).
+
+Наприклад:
+
+evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3) => [4, 6, 8]
+evenNumbers([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2) => [-8, 26]
+evenNumbers([6, -25, 3, 7, 5, 5, 7, -3, 23], 1) => [6]
+*/
+
+function evenNumbers(array, number) {
+  const evenArr = [];
+  for (const item of array) {
+    if (item % 2 === 0) evenArr.push(item);
   }
+  return evenArr.slice(-number);
+}
 
-  let maxSalary = 0;
-  let name = '';
-  for(let key in salaries) {
-    if (salaries[key] > maxSalary) {
-      maxSalary = salaries[key];
-      name = key;
-    }
-  }
-  return name;
-};
-
-console.log(topSalary(salaries));
+console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));

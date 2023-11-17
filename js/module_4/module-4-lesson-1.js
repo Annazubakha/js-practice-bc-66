@@ -4,26 +4,58 @@
 ? Функція each повинна повернути новий масив, елементами якого будуть результати 
 виклику колбека.
 */
-const numbers = [1, 3, 4, 5];
+// const numbers = [1, 3, 4, 5];
 
-function each(array, callback) {
-  const newArray = [];
+// function each(array, callback) {
+//   const newArray = [];
 
-  for (let i = 0; i < array.length; i++) {
-    newArray.push(callback(array[i], i, array));
-  }
-  return newArray;
-}
-function qwe(number) {
-  return number * 2;
-}
-console.log(each(numbers, qwe));
+//   for (let i = 0; i < array.length; i++) {
+//     newArray.push(callback(array[i], i, array));
+//   }
+//   return newArray;
+// }
+// function qwe(number) {
+//   return number * 2;
+// }
+// console.log(each(numbers, qwe));
 
-function multiply(number) {
-  return number * 21;
-}
+// function multiply(number) {
+//   return number * 21;
+// }
 
-function divide(number) {
-  return number / 2;
+// function divide(number) {
+//   return number / 2;
+// }
+// console.log(each(numbers, divide));
+/*
+? Напишіть такі функції:
+? createProduct(product, callback) - приймає об'єкт товару без ID, а також колбек. Функція створює об'єкт товару, додаючи унікальний ідентифікатор у властивість id і викликає колбек передаючи йому створений об'єкт.
+? logProduct(product) - коллбек, що приймає об'єкт продукту і логіює його в консоль
+? logTotalPrice(product) - коллбек, що приймає об'єкт продукту і виводить в консоль загальну вартість товару.
+*/
+function createProduct(product, callback, callback2) {
+  const newProduct = { ...product, id: Date.now() };
+  callback(newProduct);
+  callback2(newProduct);
 }
-console.log(each(numbers, divide));
+const logProduct = product => {
+  console.log(product);
+};
+const logTotalPrice = ({ price, quantity }) => {
+  console.log(price * quantity);
+};
+createProduct(
+  { name: '🍎', price: 30, quantity: 3 },
+  logProduct,
+  logTotalPrice,
+);
+createProduct(
+  { name: '🍋', price: 20, quantity: 5 },
+  logProduct,
+  logTotalPrice,
+);
+createProduct(
+  { name: '🍎', price: 30, quantity: 3 },
+  logProduct,
+  logTotalPrice,
+);

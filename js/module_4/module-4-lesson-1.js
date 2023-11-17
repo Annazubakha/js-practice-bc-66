@@ -62,14 +62,33 @@
 
 // Зібрати однакові елементи в двох масивах в один
 // за допомогою forEach
-const numbers = [1, 2, 3, 4, 5];
-const numbers2 = [5, 6, 3];
+// const numbers = [1, 2, 3, 4, 5];
+// const numbers2 = [5, 6, 3];
 
-const newNumbers = [];
+// const newNumbers = [];
 
-numbers.forEach(number => {
-  if (numbers2.includes(number)) {
-    newNumbers.push(number);
-  }
-});
-console.log(newNumbers);
+// numbers.forEach(number => {
+//   if (numbers2.includes(number)) {
+//     newNumbers.push(number);
+//   }
+// });
+// console.log(newNumbers);
+// Array.prototype.ownForEach = function (callback) {
+//   const newArray = [];
+//   for (let i = 0; i < this.length; i += 1) {
+//     newArray.push(callback(this[i], i, this));
+//   }
+//   return newArray;
+// };
+// const rezult = numbers.ownForEach(number => {
+//   console.log(number);
+
+//   return number + 1;
+// });
+// console.log(rezult);
+// console.dir(Array);
+// ownForEach(numbers, (number, index, array) => {
+//   console.log(number);
+//   console.log(index);
+//   console.log(array);
+// });

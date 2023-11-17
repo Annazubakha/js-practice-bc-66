@@ -33,29 +33,43 @@
 ? logProduct(product) - коллбек, що приймає об'єкт продукту і логіює його в консоль
 ? logTotalPrice(product) - коллбек, що приймає об'єкт продукту і виводить в консоль загальну вартість товару.
 */
-function createProduct(product, callback, callback2) {
-  const newProduct = { ...product, id: Date.now() };
-  callback(newProduct);
-  callback2(newProduct);
-}
-const logProduct = product => {
-  console.log(product);
-};
-const logTotalPrice = ({ price, quantity }) => {
-  console.log(price * quantity);
-};
-createProduct(
-  { name: '🍎', price: 30, quantity: 3 },
-  logProduct,
-  logTotalPrice,
-);
-createProduct(
-  { name: '🍋', price: 20, quantity: 5 },
-  logProduct,
-  logTotalPrice,
-);
-createProduct(
-  { name: '🍎', price: 30, quantity: 3 },
-  logProduct,
-  logTotalPrice,
-);
+// function createProduct(product, callback, callback2) {
+//   const newProduct = { ...product, id: Date.now() };
+//   callback(newProduct);
+//   callback2(newProduct);
+// }
+// const logProduct = product => {
+//   console.log(product);
+// };
+// const logTotalPrice = ({ price, quantity }) => {
+//   console.log(price * quantity);
+// };
+// createProduct(
+//   { name: '🍎', price: 30, quantity: 3 },
+//   logProduct,
+//   logTotalPrice,
+// );
+// createProduct(
+//   { name: '🍋', price: 20, quantity: 5 },
+//   logProduct,
+//   logTotalPrice,
+// );
+// createProduct(
+//   { name: '🍎', price: 30, quantity: 3 },
+//   logProduct,
+//   logTotalPrice,
+// );
+
+// Зібрати однакові елементи в двох масивах в один
+// за допомогою forEach
+const numbers = [1, 2, 3, 4, 5];
+const numbers2 = [5, 6, 3];
+
+const newNumbers = [];
+
+numbers.forEach(number => {
+  if (numbers2.includes(number)) {
+    newNumbers.push(number);
+  }
+});
+console.log(newNumbers);

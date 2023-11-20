@@ -43,5 +43,17 @@ const students = [
 // console.log(result);
 
 
-const result = students.reduce((acc, {courses} ) => [...acc, ...courses], [])
-  console.log(result)
+// const result = students.reduce((acc, {courses} ) => [...acc, ...courses], []).filter((element, index, array) => array.indexOf(element) === index)
+//   console.log(result)
+
+  // const result = students.reduce((acc, {courses} ) => [...acc, ...courses], []).reduce((acc, el) => {
+  // if(acc.includes(el)) {
+  //   return acc
+  // } 
+  // return [...acc, el]
+  // }, [])
+  // console.log(result)
+
+  const result = students.reduce((acc, {courses} ) => [...acc, ...courses], []).reduce((acc, el) => acc.includes(el) ? acc : [...acc, el]
+   , [])
+    console.log(result)

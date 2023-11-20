@@ -39,5 +39,9 @@ const students = [
 
 // console.log(result);
 
-const result = students.flatMap(student => student.courses);
-console.log(result);
+// const result = students.flatMap(student => student.courses);
+// console.log(result);
+
+
+const result = students.reduce((acc, {courses} ) => [...acc, ...courses], [])
+  console.log(result)

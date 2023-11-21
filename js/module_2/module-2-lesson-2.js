@@ -60,13 +60,32 @@
 //   return arr.reverse()
 // }
 
-function arrReverse(arr) {
-  for (let i = 0; i < arr.length / 2; i++)
-  {
-    let template = arr[arr.length - i - 1];
-    arr[arr.length - i - 1] = arr[i];
-    arr[i] = template;
-  }
-  return arr
+// function arrReverse(arr) {
+//   for (let i = 0; i < arr.length / 2; i++)
+//   {
+//     let template = arr[arr.length - i - 1];
+//     arr[arr.length - i - 1] = arr[i];
+//     arr[i] = template;
+//   }
+//   return arr
+// }
+// console.log(arrReverse([1, 2, 3, 4, 5]));
+//----------------------------------------------------------------
+/*
+? Це ladder (сходи) – об'єкт, який дозволяє підніматися вгору та спускатися:
+*/
+
+const ladder = {
+  step: 0,
+
+  up() {
+  },
+
+  down() {
+  },
+
+  showStep() {
+  },
 }
-console.log(arrReverse([1,2,3,4,5]));
+ladder.up()
+console.log(ladder.showStep());

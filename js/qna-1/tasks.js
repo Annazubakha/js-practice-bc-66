@@ -25,24 +25,55 @@ queueTime([2,3,10], 2)
 
 */
 
-function queueTime(customers, n) {
-  //   const array = [];
-  //   for (let i = 0; i < n; i += 1) {
-  //     array.push(0);
-  //   }
+// function queueTime(customers, n) {
+//   //   const array = [];
+//   //   for (let i = 0; i < n; i += 1) {
+//   //     array.push(0);
+//   //   }
 
-  const array = new Array(n).fill(0);
-  //   for (let customer of customers) {
-  //     const index = array.indexOf(Math.min(...array));
-  //     array[index] += customer;
-  //   }
+//   const array = new Array(n).fill(0);
+//   //   for (let customer of customers) {
+//   //     const index = array.indexOf(Math.min(...array));
+//   //     array[index] += customer;
+//   //   }
 
-  customers.forEach(customer => {
-    const index = array.indexOf(Math.min(...array));
-    array[index] += customer;
-  });
-  return Math.max(...array);
+//   customers.forEach(customer => {
+//     const index = array.indexOf(Math.min(...array));
+//     array[index] += customer;
+//   });
+//   return Math.max(...array);
+// }
+// console.log(queueTime([10, 2, 3, 3], 2));
+// console.log(queueTime([5, 3, 4], 1));
+// console.log(queueTime([2, 3, 10], 2));
+
+/*
+За заданим словником мов та результатами вашого тесту поверніть список мов, для яких тестовий бал не менший за 60, у порядку спадання результатів.
+
+Значення, повторююватися не будуть.
+
+Приклади
+{"Java": 10, "Ruby": 80, "Python": 65}  --> ["Ruby", "Python"]
+{ "Hindi": 60, "Dutch" : 93, "Greek": 71} --> ["Dutch", "Greek", "Hindi"]
+{"C++": 50, "ASM": 10, "Haskell": 20}   --> []
+*/
+
+// function findResult(score) {
+//   let newArray = [];
+//   for (const el in score) {
+//     if (score[el] >= 60) {
+//       newArray.push(el);
+//     }
+//   }
+//   console.log(newArray);
+//   return newArray.sort((a, b) => score[b] - score[a]);
+// }
+
+function findResult(score) {
+  return Object.keys(score)
+    .filter(key => score[key] >= 60)
+    .sort((a, b) => score[b] - score[a]);
 }
-console.log(queueTime([10, 2, 3, 3], 2));
-console.log(queueTime([5, 3, 4], 1));
-console.log(queueTime([2, 3, 10], 2));
+console.log(findResult({ Java: 10, Ruby: 80, Python: 65 }));
+console.log(findResult({ Hindi: 60, Dutch: 93, Greek: 71 }));
+console.log(findResult({ 'C++': 50, ASM: 10, Haskell: 20 }));

@@ -156,12 +156,54 @@ function([16, 16], [10, 5], 'Doctor') повинна повернути 'doctor'
 найбільша знайдена остача дорівнює 6, а оскільки 6 - парне число --> рядок повертається у мінусовому вигляді.
 */
 
-function result(arr1, arr2, str) {
-  const array = [];
-  arr1.forEach((element, index) => {
-    array.push(element % arr2[index]);
-  });
-  const isEven = !(Math.max(...array) % 2);
-  return str[`to${isEven ? 'Lower' : 'Upper'}Case`]();
+// function result(arr1, arr2, str) {
+//   const array = [];
+//   arr1.forEach((element, index) => {
+//     array.push(element % arr2[index]);
+//   });
+//   const isEven = !(Math.max(...array) % 2);
+//   return str[`to${isEven ? 'Lower' : 'Upper'}Case`]();
+// }
+// console.log(result([16, 16], [10, 5], 'Doctor'));
+
+/*
+Опис:
+Mango щойно закінчив школу і хоче використати свою свободу, щоб помандрувати 
+світом, перш ніж вступити до коледжу, залізти в борги і почати працювати. Вирісши 
+в одному місті все своє життя, він хоче поїхати якомога далі, залишаючись при цьому
+ в рамках бюджету. Допоможіть Mango спланувати подорож, надавши йому необхідну інформацію.
+
+Вам буде надано масив об'єктів. Кожен об'єкт містить пункт призначення, відстань 
+до нього та ціну квитка до цього пункту. Вам потрібно повернути масив пунктів призначення,
+ відсортованих спочатку за відстанню (у порядку спадання), а потім за ціною (у порядку
+   зростання).
+
+Приклад:
+
+Задано наступний масив об'єктів:
+
+[ { 'dest': 'ATL', 'dist': 1300, 'price': 200} ,
+{ {'dest': 'PEK', 'dist': 7000, 'price': 700} ,
+{'dest': 'DXB', 'dist': 9000, 'price': 900} ,
+{'dest': 'LAX', 'dist': 1300, 'price': 150} ]
+
+Ви повинні повернути ['DXB', 'PEK', 'LAX', 'ATL'].
+
+Примітка:
+
+'dist' і 'price' завжди будуть цілими числами, а 'dest' завжди буде рядком з трьох літер.
+*/
+function travelMap(arr) {
+  console.log(arr);
+  return [...arr]
+    .sort((a, b) => b.dist - a.dist || a.price - b.price)
+    .map(el => el.dest);
 }
-console.log(result([16, 16], [10, 5], 'Doctor'));
+console.log(
+  travelMap([
+    { dest: 'ATL', dist: 1300, price: 200 },
+    { dest: 'PEK', dist: 7000, price: 700 },
+    { dest: 'DXB', dist: 9000, price: 900 },
+    { dest: 'LAX', dist: 1300, price: 150 },
+  ]),
+);

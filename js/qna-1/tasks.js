@@ -105,7 +105,6 @@ queueTime([2,3,10], 2)
 
 // console.log(makeSquare(3))
 
-
 /*
 За заданим масивом повернути різницю між кількістю парних чисел та кількістю непарних чисел. 0 буде вважатись парним числом.
 
@@ -118,22 +117,51 @@ solve([0,1,2,3,'a','b']) = 0. Знову ж таки, Even - Odd = 2 - 2 = 0. І
 
 */
 
-function solve(array) {
+// function solve(array) {
 
-  // let even = [];
-  // let odd = [];
-  // for (const item of array) {
-  //   if(item % 2 === 0) {
-  //     even.push(item)
-  //   }
-  //   if(item % 2 === 1) {
-  //     odd.push(item)
-  //   }
-  // }
+// let even = [];
+// let odd = [];
+// for (const item of array) {
+//   if(item % 2 === 0) {
+//     even.push(item)
+//   }
+//   if(item % 2 === 1) {
+//     odd.push(item)
+//   }
+// }
 
-  const even = array.filter(item => item % 2 === 0)
-  const odd = array.filter(item => item % 2 === 1)
-  return even.length - odd.length
+//   const even = array.filter(item => item % 2 === 0)
+//   const odd = array.filter(item => item % 2 === 1)
+//   return even.length - odd.length
+// }
+
+// console.log(solve([0,1,2,3,'a','b']))
+
+/*
+Напишіть функцію, яка отримує три аргументи. Перші два завжди будуть масивами, що складаються з цілих чисел, третій - рядком літер. 
+Довжини перших двох масивів будуть однакові, а цілі числа завжди додатні.
+
+Ваша функція повинна розділити перше число першого масиву на перше число другого масиву і знайти остачу, 
+потім зробити те ж саме з другою парою чисел і т.д. Якщо найбільший знайдений залишок є парним числом, 
+функція повинна повернути рядок з мінусом (маленькими літерами). В іншому випадку, функція повинна повернути рядок у великому форматі (великими літерами).
+
+Приклад:
+
+function([16, 16], [10, 5], 'Doctor') повинна повернути 'doctor', тому що
+
+остача від першої пари цілих чисел (16 ділиться на 10) дорівнює 6;
+
+остача від другої пари дорівнює 1;
+
+найбільша знайдена остача дорівнює 6, а оскільки 6 - парне число --> рядок повертається у мінусовому вигляді.
+*/
+
+function result(arr1, arr2, str) {
+  const array = [];
+  arr1.forEach((element, index) => {
+    array.push(element % arr2[index]);
+  });
+  const isEven = !(Math.max(...array) % 2);
+  return str[`to${isEven ? 'Lower' : 'Upper'}Case`]();
 }
-
-console.log(solve([0,1,2,3,'a','b']))
+console.log(result([16, 16], [10, 5], 'Doctor'));

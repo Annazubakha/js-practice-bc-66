@@ -69,11 +69,71 @@ queueTime([2,3,10], 2)
 //   return newArray.sort((a, b) => score[b] - score[a]);
 // }
 
-function findResult(score) {
-  return Object.keys(score)
-    .filter(key => score[key] >= 60)
-    .sort((a, b) => score[b] - score[a]);
+// function findResult(score) {
+//   return Object.keys(score)
+//     .filter(key => score[key] >= 60)
+//     .sort((a, b) => score[b] - score[a]);
+// }
+// console.log(findResult({ Java: 10, Ruby: 80, Python: 65 }));
+// console.log(findResult({ Hindi: 60, Dutch: 93, Greek: 71 }));
+// console.log(findResult({ 'C++': 50, ASM: 10, Haskell: 20 }));
+
+/*
+Дано ціле число. Поверніть фігуру, довжина і ширина якої дорівнює цьому числу. Число буде цілим числом від 0 до 50.
+
+Приклад: Ціле число = 3; Поверніть квадрат 3x3, як показано нижче, у вигляді рядка.
+
++++
++++
++++
+*/
+
+// const makeSquare = (n) => {
+//   let square = ''
+//   for(let i = 0; i < n; i++) {
+//     for(let j = 0; j < n; j++) {
+//       square += '+'
+//     }
+//     square += '\n'
+//   }
+//   console.log(square)
+// }
+
+// const makeSquare = (n) => {
+//   return new Array(n).fill('+'.repeat(n)).join('\n')
+// }
+
+// console.log(makeSquare(3))
+
+
+/*
+За заданим масивом повернути різницю між кількістю парних чисел та кількістю непарних чисел. 0 буде вважатись парним числом.
+
+Наприклад:
+solve([0,1,2,3]) = 0, тому що є два парних числа і два непарних. Парне - непарне = 2 - 2 = 0.
+
+
+solve([0,1,2,3,'a','b']) = 0. Знову ж таки, Even - Odd = 2 - 2 = 0. Ігноруємо літери.
+На вхід буде подано масив лише малих літер та цифр.
+
+*/
+
+function solve(array) {
+
+  // let even = [];
+  // let odd = [];
+  // for (const item of array) {
+  //   if(item % 2 === 0) {
+  //     even.push(item)
+  //   }
+  //   if(item % 2 === 1) {
+  //     odd.push(item)
+  //   }
+  // }
+
+  const even = array.filter(item => item % 2 === 0)
+  const odd = array.filter(item => item % 2 === 1)
+  return even.length - odd.length
 }
-console.log(findResult({ Java: 10, Ruby: 80, Python: 65 }));
-console.log(findResult({ Hindi: 60, Dutch: 93, Greek: 71 }));
-console.log(findResult({ 'C++': 50, ASM: 10, Haskell: 20 }));
+
+console.log(solve([0,1,2,3,'a','b']))

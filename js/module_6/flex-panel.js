@@ -6,7 +6,11 @@ const onCLickItem = e => {
     isOpen.classList.remove('open');
   }
 
-  e.target.classList.toggle('open');
+  if (e.currentTarget === isOpen) {
+    return;
+  }
+
+  e.currentTarget.classList.add('open');
 };
 
 listElements.forEach(item => {
